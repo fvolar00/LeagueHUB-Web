@@ -1,4 +1,6 @@
-﻿namespace LeagueHUB_backend.Models
+﻿using LeagueHUB_backend.Enums;
+
+namespace LeagueHUB_backend.Models
 {
     public class Competitor
     {
@@ -10,10 +12,10 @@
 
     public class Coach : Competitor
     {
-        public string Tactic { get; set; }
+        public TacticType Tactic { get; set; }
     }
     public class Player : Competitor
     {
-        public string Position { get; set; }
+        public PositionType Position { get; set; }
     }
 }

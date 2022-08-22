@@ -1,4 +1,6 @@
+using LeagueHUB_backend.Interfaces;
 using LeagueHUB_backend.Models;
+using LeagueHUB_backend.Repository;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +15,8 @@ builder.Services.AddDbContext<LeagueHUBContext>(opt =>
     opt.UseSqlServer("LHWconnectionstring"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 
 
 var app = builder.Build();
@@ -22,8 +25,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
