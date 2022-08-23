@@ -15,6 +15,24 @@
         public List<Player>? Players { get; set; }
         public Coach? Coach { get; set; }
 
+        public void Won()
+        {
+            Points += 3;
+            Wins += 1;
+            GamesPlayed += 1;
+        }
+        public void Lost()
+        {
+            Losses += 1;
+            GamesPlayed += 1;
+        }
+        public void Tied()
+        {
+            Points += 1;
+            Draws += 1;
+            GamesPlayed += 1;
+        }
+
 
     }
 }

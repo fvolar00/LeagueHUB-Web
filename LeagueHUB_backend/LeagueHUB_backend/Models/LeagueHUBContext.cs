@@ -1,5 +1,8 @@
-﻿using LeagueHUB_backend.Models;
+﻿using LeagueHUB_backend.Enums;
+using LeagueHUB_backend.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System.Data;
 
 namespace LeagueHUB_backend.Models
 
@@ -36,7 +39,15 @@ optionsBuilder)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict); // <--
 
+            modelBuilder
+                .Entity<Coach>()
+                .Property(d => d.Tactic)
+                .HasConversion(new EnumToStringConverter<TacticType>());
 
+            modelBuilder
+                .Entity<Player>()
+                .Property(d => d.Position)
+                .HasConversion(new EnumToStringConverter<PositionType>());
 
         }
     }

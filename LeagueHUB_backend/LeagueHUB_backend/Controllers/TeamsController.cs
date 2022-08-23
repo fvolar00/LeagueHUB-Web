@@ -8,25 +8,35 @@ using Microsoft.EntityFrameworkCore;
 using LeagueHUB_backend.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc.Routing;
-using LeagueHUB_backend.Interfaces;
+using AutoMapper;
+using LeagueHUB_backend.Dto;
+using LeagueHUB_backend.Interfaces.Repos;
+using LeagueHUB_backend.Interfaces.Services;
+using LeagueHUB_backend.Enums;
 
 namespace LeagueHUB_backend.Controllers
 {
     [ApiController]
     public class TeamsController : Controller
     {
-        private readonly ITeamRepository _teamRepository;
+        private readonly ITeamCoachService _teamCoachService;
 
-        public TeamsController(ITeamRepository teamRepository)
+        public TeamsController(ITeamCoachService teamCoachService)
         {
-            _teamRepository = teamRepository;
+            _teamCoachService = teamCoachService;
+
+        }
+       
+
+        [HttpPost, Route("api/[controller]/create")]
+        public IActionResult CreateTeam(string teamname, string coachname, TacticType tactics)
+        {
+            _teamCoachService.CreateTeam(teamname, coachname, tactics);
+            return Ok();
         }
 
-        [HttpGet, Route("api/[controller]")]
-        public IActionResult GetTeams()
-        {
-            return Ok(_teamRepository.GetTeams());
-        }
+
+
         
 
         //[HttpGet, Route("api/[controller]/Names")]
