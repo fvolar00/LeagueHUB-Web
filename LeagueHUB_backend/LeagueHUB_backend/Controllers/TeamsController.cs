@@ -20,11 +20,12 @@ namespace LeagueHUB_backend.Controllers
     public class TeamsController : Controller
     {
         private readonly ITeamCoachService _teamCoachService;
+        private readonly ITeamService _teamService;
 
-        public TeamsController(ITeamCoachService teamCoachService)
+        public TeamsController(ITeamCoachService teamCoachService, ITeamService teamService)
         {
             _teamCoachService = teamCoachService;
-
+            _teamService = teamService;
         }
        
 
@@ -33,6 +34,13 @@ namespace LeagueHUB_backend.Controllers
         {
             _teamCoachService.CreateTeam(teamname, coachname, tactics);
             return Ok();
+        }
+
+        [HttpGet, Route("api/[controller]")]
+        public IActionResult GetTeams()
+        {
+            var teams = _teamService.GetTeams();
+            return Ok(teams);
         }
 
 

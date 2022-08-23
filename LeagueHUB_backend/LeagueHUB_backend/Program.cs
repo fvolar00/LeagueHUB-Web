@@ -27,7 +27,7 @@ builder.Services.AddScoped<IRefereeRepository, RefereeRepository>();
 builder.Services.AddScoped<IRefereeService, RefereeService>();
 builder.Services.AddScoped<ITeamCoachService, TeamCoachService>();
 builder.Services.AddScoped<ICoachService, CoachService>();
-
+builder.Services.AddScoped<ITeamService, TeamService>();
 
 var app = builder.Build();
 
