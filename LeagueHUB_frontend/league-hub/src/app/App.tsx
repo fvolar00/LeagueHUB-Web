@@ -1,13 +1,9 @@
-import {BrowserRouter as Router, Switch} from 'react-router-dom';
+import React from 'react'
+import './App.css'
+import { LandingPage } from '../pages/landing.page'
 
-// eslint-disable-next-line
-export default function App() {
-    return (
-            <div>
-                <Router>
-                    <Switch>
-                    </Switch>
-                </Router>
-            </div>
-    );
+function App() {
+  return <LandingPage></LandingPage>
 }
+
+export default App
