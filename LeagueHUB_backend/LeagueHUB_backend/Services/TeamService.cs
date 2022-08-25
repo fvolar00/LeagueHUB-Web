@@ -17,11 +17,28 @@ namespace LeagueHUB_backend.Services
             _mapper = mapper;
         }
 
-        public List<GetTeamsDto> GetTeams()
+        public void CreateTeam(string name)
         {
-            var teams = _mapper.Map<List<GetTeamsDto>>(_teamRepository.GetTeams());
+            Team team = new Team();
+            team.Name = name;
+            _teamRepository.CreateTeam(team);
+        }
+
+        public Team GetTeam(int id)
+        {
+            Team team = _teamRepository.GetTeam(id);
+            return team;
+        }
+
+        public List<TeamsDto> GetTeams()
+        {
+            var teams = _mapper.Map<List<TeamsDto>>(_teamRepository.GetTeams());
             return teams;
         }
 
+        public void UpdateTeam(Team team)
+        {
+            _teamRepository.UpdateTeam(team);
+        }
     }
 }

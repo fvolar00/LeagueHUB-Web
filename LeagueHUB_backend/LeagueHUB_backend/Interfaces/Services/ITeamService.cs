@@ -5,6 +5,9 @@ namespace LeagueHUB_backend.Interfaces.Services
 {
     public interface ITeamService
     {
-        public List<GetTeamsDto> GetTeams();
+        public List<TeamsDto> GetTeams();
+        public Team GetTeam(int id);
+        public void CreateTeam(string name);
+        public void UpdateTeam(Team team);
     }
 }

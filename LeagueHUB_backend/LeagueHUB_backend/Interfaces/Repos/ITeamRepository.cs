@@ -11,6 +11,7 @@ namespace LeagueHUB_backend.Interfaces.Repos
         public int GetGoalDifference(int id);
         public bool Save();
         public void CreateTeam(Team team);
+        public void UpdateTeam(Team team);
 
     }
 }

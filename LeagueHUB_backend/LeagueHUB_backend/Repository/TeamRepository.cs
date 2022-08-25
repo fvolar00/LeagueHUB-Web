@@ -38,7 +38,7 @@ namespace LeagueHUB_backend.Repository
 
         public Team GetTeam(int id)
         {
-            return _context.Teams.Where(p => p.Id == id).FirstOrDefault();
+            return _context.Teams.Find(id);
         }
 
         public List<Team> GetTeams()
@@ -62,5 +62,10 @@ namespace LeagueHUB_backend.Repository
             return _context.Teams.Any(p => p.Name == name);
         }
 
+        public void UpdateTeam(Team team)
+        {
+            _context.Update(team);
+            _context.SaveChanges();
+        }
     }
 }

@@ -24,7 +24,8 @@ namespace LeagueHUB_backend.Repository
 
         public void DeleteCoach(Coach coach)
         {
-            throw new NotImplementedException();
+            _context?.Remove(coach);
+            _context?.SaveChanges();
         }
 
         public Coach GetCoach(int id)
@@ -40,7 +41,8 @@ namespace LeagueHUB_backend.Repository
 
         public void UpdateCoach(Coach coach)
         {
-            throw new NotImplementedException();
+            _context.Update(coach);
+            _context.SaveChanges();
         }
     }
 }

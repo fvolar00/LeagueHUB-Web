@@ -30,12 +30,13 @@ namespace LeagueHUB_backend.Services
 
         public Referee GetReferee(int id)
         {
-            throw new NotImplementedException();
+            Referee referee = _refereeRepository.GetReferee(id);
+            return referee;
         }
 
-        public List<GetRefereesDto> GetReferees()
+        public List<RefereesDto> GetReferees()
         {
-            var referees = _mapper.Map<List<GetRefereesDto>>(_refereeRepository.GetReferees());
+            var referees = _mapper.Map<List<RefereesDto>>(_refereeRepository.GetReferees());
             return referees;
         }
 

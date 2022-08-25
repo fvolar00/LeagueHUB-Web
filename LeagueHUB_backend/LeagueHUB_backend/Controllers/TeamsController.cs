@@ -19,28 +19,25 @@ namespace LeagueHUB_backend.Controllers
     [ApiController]
     public class TeamsController : Controller
     {
-        private readonly ITeamCoachService _teamCoachService;
         private readonly ITeamService _teamService;
 
-        public TeamsController(ITeamCoachService teamCoachService, ITeamService teamService)
+        public TeamsController(ITeamService teamService)
         {
-            _teamCoachService = teamCoachService;
             _teamService = teamService;
-        }
-       
-
-        [HttpPost, Route("api/[controller]/create")]
-        public IActionResult CreateTeam(string teamname, string coachname, TacticType tactics)
-        {
-            _teamCoachService.CreateTeam(teamname, coachname, tactics);
-            return Ok();
-        }
+        }     
 
         [HttpGet, Route("api/[controller]")]
         public IActionResult GetTeams()
         {
             var teams = _teamService.GetTeams();
             return Ok(teams);
+        }
+
+        [HttpPost, Route("api/[controller]/create")]
+        public IActionResult CreateTeam(string name)
+        {
+            _teamService.CreateTeam(name);
+            return Ok();
         }
 
 

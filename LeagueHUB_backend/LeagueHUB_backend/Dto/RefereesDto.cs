@@ -1,6 +1,6 @@
 ﻿namespace LeagueHUB_backend.Dto
 {
-    public class GetRefereesDto
+    public class RefereesDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

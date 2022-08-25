@@ -25,9 +25,9 @@ builder.Services.AddScoped<IGameRepository, GameRepository>();
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 builder.Services.AddScoped<IRefereeRepository, RefereeRepository>();
 builder.Services.AddScoped<IRefereeService, RefereeService>();
-builder.Services.AddScoped<ITeamCoachService, TeamCoachService>();
 builder.Services.AddScoped<ICoachService, CoachService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<IGameService, GameService>();
 
 var app = builder.Build();
 

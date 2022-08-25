@@ -259,7 +259,5 @@ D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\bin\Debug\net
 D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\obj\Debug\net6.0\LeagueHUB_backend.RazorAssemblyInfo.cache
-D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\obj\Debug\net6.0\LeagueHUB_backend.RazorAssemblyInfo.cs
 D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\bin\Debug\net6.0\AutoMapper.dll
 D:\Programiranje\LeagueHUB-Web\LeagueHUB_backend\LeagueHUB_backend\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
