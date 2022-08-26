@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { TableComponent } from '../components/table.component'
-import { Team } from '../interfaces/team.interface';
+import { Team } from '../interfaces/models/team.model';
 import { TeamService } from '../services/team.service';
 
 export function TableContainer() {
@@ -8,7 +8,7 @@ export function TableContainer() {
 
   useEffect(() => {
     fetchTeamData();
-  });
+  }, []);
 
   async function fetchTeamData() {
     try {
@@ -22,5 +22,5 @@ export function TableContainer() {
     console.log(teamData);
 }
 
-  return <TableComponent></TableComponent>
+  return <TableComponent teams={teamData}></TableComponent>
 }

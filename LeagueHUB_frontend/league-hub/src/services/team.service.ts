@@ -1,8 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
-import { Team } from '../interfaces/team.interface';
+import { Team } from '../interfaces/models/team.model';
+import { BASE_URL } from '../shared/constants/base-url.constant';
 
-const BASE_TEAM_URL = 'https://localhost:7068/Teams'
-// const BASE_TEAM_URL = '/api/Teams'
+const BASE_TEAM_URL = `${BASE_URL}/api/Teams`
 
 export const TeamService = {
     fetchTeamData: async (): Promise<AxiosResponse<Team[]>> => {

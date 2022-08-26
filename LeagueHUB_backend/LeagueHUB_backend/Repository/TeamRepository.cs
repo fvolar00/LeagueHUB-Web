@@ -43,7 +43,7 @@ namespace LeagueHUB_backend.Repository
 
         public List<Team> GetTeams()
         {
-            return _context.Teams.OrderBy(p => p.Points).ToList();
+            return _context.Teams.OrderByDescending(p => p.Points).ToList();
         }
 
         public bool Save()
