@@ -58,22 +58,7 @@ namespace LeagueHUB_backend.Services
 
         public List<GamesDto> GetGames()
         {
-            //var games = _mapper.Map<List<GamesDto>>(_gameRepository.GetGames());
-            List<GamesDto> matches = new List<GamesDto>();
-            List<Game> games = _gameRepository.GetGames();
-            foreach (Game game in games)
-            {
-                GamesDto dto = new GamesDto();
-                dto.Id = game.Id;
-                dto.HomeName = game.Home.Name;
-                dto.RefereeName = game.Referee.Name;
-                dto.GuestName = game.Guest.Name;
-                dto.date = game.date;
-                dto.HomeScore = game.HomeScore;
-                dto.GuestScore = game.GuestScore;
-                matches.Add(dto);
-
-            }
+            var matches = _mapper.Map<List<GamesDto>>(_gameRepository.GetGames());
             return matches;
         }
     }

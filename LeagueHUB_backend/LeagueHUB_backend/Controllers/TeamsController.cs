@@ -17,6 +17,7 @@ using LeagueHUB_backend.Enums;
 namespace LeagueHUB_backend.Controllers
 {
     [ApiController]
+    [EnableCors]
     public class TeamsController : Controller
     {
         private readonly ITeamService _teamService;
