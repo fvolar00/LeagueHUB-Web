@@ -1,8 +1,9 @@
 import { Table } from 'react-bootstrap'
+import { Team } from '../interfaces/team.interface'
 
 export function TableComponent() {
   return (
-    <Table striped bordered hover variant='dark'>
+    <Table striped bordered hover variant='dark' className="flex-column">
       <thead>
         <tr>
           <th>#</th>
