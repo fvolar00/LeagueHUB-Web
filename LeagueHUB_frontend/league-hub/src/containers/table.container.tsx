@@ -8,7 +8,7 @@ export function TableContainer() {
 
   useEffect(() => {
     fetchTeamData();
-  });
+  }, []);
 
   async function fetchTeamData() {
     try {
