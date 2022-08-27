@@ -42,7 +42,7 @@ export function AddMatchModalContainer() {
 
   const [fetch, setFetch] = useState(false)
   const toggleFetch = () => {
-    setFetch(!fetch)
+    setFetch(!fetch);
   }
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export function AddMatchModalContainer() {
     // console.log(matchForm);
     addMatch();
     handleClose();
-    toggleFetch()
+    toggleFetch();
   }
 
   async function addMatch() {
@@ -73,6 +73,7 @@ export function AddMatchModalContainer() {
       await GameService.addMatch(matchForm)
     } finally {
       // setLoading(false);
+      toggleFetch();
     }
   }
 

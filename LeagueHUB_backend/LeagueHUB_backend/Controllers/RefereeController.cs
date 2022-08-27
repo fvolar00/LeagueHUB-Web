@@ -18,7 +18,7 @@ namespace LeagueHUB_backend.Controllers
             _refereeService = refereeService;
         }
 
-        [HttpGet, Route("api/referees")]
+        [HttpGet, Route("api/[controller]")]
         public IActionResult GetReferees()
         {
             return Ok(_refereeService.GetReferees());
