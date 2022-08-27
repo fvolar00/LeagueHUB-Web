@@ -6,4 +6,6 @@ export interface ModalProps {
   handleClose: () => void;
   teams: Team[];
   referees: Referee[];
+  onFormChange: (e: { target: { name: any; value: any } }) => void;
+  submitHandler: (event: any) => void;
 }

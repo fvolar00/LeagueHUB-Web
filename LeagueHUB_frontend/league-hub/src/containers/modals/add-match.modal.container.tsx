@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
+import { FormEventHandler, useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
-import { AddTeamModalComponent } from '../../components/modals/add-team.modal.component'
+import { AddMatchModalComponent } from '../../components/modals/add-match.modal.component'
+import { AddMatchFormModel } from '../../interfaces/models/add-match-form.model'
 import { Referee } from '../../interfaces/models/referee.model'
 import { Team } from '../../interfaces/models/team.model'
 import { RefereeService } from '../../services/referee.service'
 import { TeamService } from '../../services/team.service'
 
-export function AddTeamModalContainer() {
+export function AddMatchModalContainer() {
   const [show, setShow] = useState(false)
 
   const handleClose = () => {
@@ -43,15 +44,31 @@ export function AddTeamModalContainer() {
     fetchRefereeData()
   }, [])
 
+  const [matchForm, setMatchForm] = useState({} as AddMatchFormModel);
+  const onFormChange = (e: { target: { name: any; value: any } }) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setMatchForm({ ...matchForm, [name]: value });
+    console.log(name, value);
+  }
+  const submitHandler: FormEventHandler = (event) => {
+    event.preventDefault();
+    event.persist();
+    console.log('push data somewhere :)')
+    console.log(matchForm);
+  };
+
   return (
     <div>
       <Button onClick={handleOpen}>Add Match</Button>
-      <AddTeamModalComponent
+      <AddMatchModalComponent
         show={show}
         handleClose={handleClose}
         teams={teamData}
         referees={refereeData}
-      ></AddTeamModalComponent>
+        onFormChange={onFormChange}
+        submitHandler={submitHandler}
+      ></AddMatchModalComponent>
     </div>
   )
 }
