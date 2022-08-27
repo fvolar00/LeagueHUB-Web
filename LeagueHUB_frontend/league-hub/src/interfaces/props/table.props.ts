@@ -1,5 +1,5 @@
-import { Team } from "../models/team.model";
+import { Team } from '../models/team.model'
 
 export interface TableProps {
-    teams: Team[];
+  teams: Team[]
 }

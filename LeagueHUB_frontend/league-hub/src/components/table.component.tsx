@@ -1,9 +1,9 @@
 import { Table } from 'react-bootstrap'
 import { TableProps } from '../interfaces/props/table.props'
 
-export function TableComponent({teams}: TableProps) {
+export function TableComponent({ teams }: TableProps) {
   return (
-    <Table striped bordered hover variant='dark' className="flex-column">
+    <Table striped bordered hover variant='dark' className='flex-column'>
       <thead>
         <tr>
           <th>Rank</th>
@@ -20,19 +20,19 @@ export function TableComponent({teams}: TableProps) {
       </thead>
       <tbody>
         {teams.map((team, i) => (
-                    <tr key={i}>
-                        <td>{i+1}</td>
-                        <td>{team.name}</td>
-                        <td>{team.points}</td>
-                        <td>{team.gamesPlayed}</td>
-                        <td>{team.wins}</td>
-                        <td>{team.draws}</td>
-                        <td>{team.losses}</td>
-                        <td>{team.goalsScored}</td>
-                        <td>{team.goalsConceded}</td>
-                        <td>{team.goalsScored-team.goalsConceded}</td>
-                    </tr>
-                ))}
+          <tr key={i}>
+            <td>{i + 1}</td>
+            <td>{team.name}</td>
+            <td>{team.points}</td>
+            <td>{team.gamesPlayed}</td>
+            <td>{team.wins}</td>
+            <td>{team.draws}</td>
+            <td>{team.losses}</td>
+            <td>{team.goalsScored}</td>
+            <td>{team.goalsConceded}</td>
+            <td>{team.goalsScored - team.goalsConceded}</td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   )

@@ -1,12 +1,12 @@
-import { Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap'
 
 export function VerticalNavbarComponent() {
   return (
-    <Nav defaultActiveKey="/home" className="flex-column bg-warning">
-      <Nav.Link href="/home">Active</Nav.Link>
-      <Nav.Link eventKey="link-1">Link</Nav.Link>
-      <Nav.Link eventKey="link-2">Link</Nav.Link>
-      <Nav.Link eventKey="disabled" disabled>Disabled</Nav.Link>
-  </Nav>
-  );
+    <Nav defaultActiveKey='/home' className='flex-column bg-warning'>
+      <label>LeagueHub</label>
+      <Nav.Link href='/'>Manage Team</Nav.Link>
+      <Nav.Link eventKey=''>Manage Coach</Nav.Link>
+      <Nav.Link eventKey=''>Manage Game</Nav.Link>
+    </Nav>
+  )
 }
