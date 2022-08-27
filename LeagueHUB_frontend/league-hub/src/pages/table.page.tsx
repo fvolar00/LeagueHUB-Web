@@ -2,6 +2,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { AddMatchModalContainer } from '../containers/modals/add-match.modal.container'
 import { TableContainer } from '../containers/table.container'
 import { VerticalNavbarContainer } from '../containers/vertical-navbar.container'
+import { useEffect, useState } from 'react'
 
 export function TablePage() {
   return (

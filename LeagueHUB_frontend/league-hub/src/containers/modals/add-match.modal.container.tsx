@@ -40,31 +40,22 @@ export function AddMatchModalContainer() {
     }
   }
 
-  const [fetch, setFetch] = useState(false)
-  const toggleFetch = () => {
-    setFetch(!fetch);
-  }
-
   useEffect(() => {
     fetchTeamData()
     fetchRefereeData()
-  }, [fetch])
+  }, [])
 
   const [matchForm, setMatchForm] = useState({} as AddMatchFormModel)
   const onFormChange = (e: { target: { name: any; value: any } }) => {
     const name = e.target.name
     const value = e.target.value
     setMatchForm({ ...matchForm, [name]: value })
-    // console.log(name, value);
   }
   const submitHandler: FormEventHandler = (event) => {
     event.preventDefault()
     event.persist()
-    // console.log('push data somewhere :)')
-    // console.log(matchForm);
     addMatch();
     handleClose();
-    toggleFetch();
   }
 
   async function addMatch() {
@@ -73,7 +64,6 @@ export function AddMatchModalContainer() {
       await GameService.addMatch(matchForm)
     } finally {
       // setLoading(false);
-      toggleFetch();
     }
   }
 
