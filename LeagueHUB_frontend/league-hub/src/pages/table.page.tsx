@@ -7,22 +7,22 @@ export function TablePage() {
   return (
     <Container>
       <Row>
-      <Col xl={2}>
-        <VerticalNavbarContainer></VerticalNavbarContainer>
-      </Col>
-      <Col lg={10}>
-        <Row>
-          <Col>
-        <TableContainer></TableContainer>
+        <Col xl={2}>
+          <VerticalNavbarContainer></VerticalNavbarContainer>
         </Col>
-        </Row>
-        <Row>
-          <Col lg={10}></Col>
-          <Col sm={2}>
-          <AddTeamModalContainer></AddTeamModalContainer>
-          </Col>
-        </Row>
-      </Col>
+        <Col lg={10}>
+          <Row>
+            <Col>
+              <TableContainer></TableContainer>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={10}></Col>
+            <Col sm={2}>
+              <AddTeamModalContainer></AddTeamModalContainer>
+            </Col>
+          </Row>
+        </Col>
       </Row>
     </Container>
   )

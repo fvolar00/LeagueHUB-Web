@@ -18,8 +18,6 @@ export function TableContainer() {
     } finally {
       // setLoading(false);
     }
-
-    console.log(teamData)
   }
 
   return <TableComponent teams={teamData}></TableComponent>
