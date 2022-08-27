@@ -4,6 +4,7 @@ import { AddMatchModalComponent } from '../../components/modals/add-match.modal.
 import { AddMatchFormModel } from '../../interfaces/models/add-match-form.model'
 import { Referee } from '../../interfaces/models/referee.model'
 import { Team } from '../../interfaces/models/team.model'
+import { GameService } from '../../services/game.service'
 import { RefereeService } from '../../services/referee.service'
 import { TeamService } from '../../services/team.service'
 
@@ -39,24 +40,41 @@ export function AddMatchModalContainer() {
     }
   }
 
+  const [fetch, setFetch] = useState(false)
+  const toggleFetch = () => {
+    setFetch(!fetch)
+  }
+
   useEffect(() => {
     fetchTeamData()
     fetchRefereeData()
-  }, [])
+  }, [fetch])
 
-  const [matchForm, setMatchForm] = useState({} as AddMatchFormModel);
+  const [matchForm, setMatchForm] = useState({} as AddMatchFormModel)
   const onFormChange = (e: { target: { name: any; value: any } }) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setMatchForm({ ...matchForm, [name]: value });
-    console.log(name, value);
+    const name = e.target.name
+    const value = e.target.value
+    setMatchForm({ ...matchForm, [name]: value })
+    // console.log(name, value);
   }
   const submitHandler: FormEventHandler = (event) => {
-    event.preventDefault();
-    event.persist();
-    console.log('push data somewhere :)')
-    console.log(matchForm);
-  };
+    event.preventDefault()
+    event.persist()
+    // console.log('push data somewhere :)')
+    // console.log(matchForm);
+    addMatch();
+    handleClose();
+    toggleFetch()
+  }
+
+  async function addMatch() {
+    try {
+      // setLoading(true);
+      await GameService.addMatch(matchForm)
+    } finally {
+      // setLoading(false);
+    }
+  }
 
   return (
     <div>

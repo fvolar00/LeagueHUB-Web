@@ -1,7 +1,14 @@
 import { Button, Form, Modal, Row, Col } from 'react-bootstrap'
 import { ModalProps } from '../../interfaces/props/modal.props'
 
-export function AddMatchModalComponent({ show, handleClose, teams, referees, onFormChange, submitHandler }: ModalProps) {
+export function AddMatchModalComponent({
+  show,
+  handleClose,
+  teams,
+  referees,
+  onFormChange,
+  submitHandler,
+}: ModalProps) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -10,10 +17,14 @@ export function AddMatchModalComponent({ show, handleClose, teams, referees, onF
       <Modal.Body>
         <Form>
           <Row className='mb-3'>
-            <Col className="ml-2" md={6}>
+            <Col className='ml-2' md={6}>
               <Form.Group>
                 <Form.Label>Home team</Form.Label>
-                <Form.Select name="homeTeamId" onChange={onFormChange} aria-label='Select Home Team'>
+                <Form.Select
+                  name='homeTeamId'
+                  onChange={onFormChange}
+                  aria-label='Select Home Team'
+                >
                   {teams.map((team, i) => (
                     <option key={i} value={team.id}>
                       {team.name}
@@ -22,11 +33,15 @@ export function AddMatchModalComponent({ show, handleClose, teams, referees, onF
                 </Form.Select>
               </Form.Group>
             </Col>
-            
-            <Col className="mr-2" md={6}>
+
+            <Col className='mr-2' md={6}>
               <Form.Group>
                 <Form.Label>Guest team</Form.Label>
-                <Form.Select name="guestTeamId" onChange={onFormChange} aria-label='Select Guest Team'>
+                <Form.Select
+                  name='guestTeamId'
+                  onChange={onFormChange}
+                  aria-label='Select Guest Team'
+                >
                   {teams.map((team, i) => (
                     <option key={i} value={team.id}>
                       {team.name}
@@ -36,14 +51,26 @@ export function AddMatchModalComponent({ show, handleClose, teams, referees, onF
               </Form.Group>
             </Col>
           </Row>
-          <Row className="mb-2 p-2">
+          <Row className='mb-2 p-2'>
             <Col md={3}></Col>
-            <Col md={2} className="p-1">
-            <Form.Control type='number' min="0" onChange={onFormChange} name='homeTeamScore'></Form.Control>
+            <Col md={2} className='p-1'>
+              <Form.Control
+                type='number'
+                min='0'
+                onChange={onFormChange}
+                name='homeTeamScore'
+              ></Form.Control>
             </Col>
-            <Col sm={2} align="center" justify="center"><div className="fs-3">:</div></Col>
-            <Col md={2} className="p-1">
-            <Form.Control type='number' min="0" onChange={onFormChange} name='guestTeamScore'></Form.Control>
+            <Col sm={2} align='center' justify='center'>
+              <div className='fs-3'>:</div>
+            </Col>
+            <Col md={2} className='p-1'>
+              <Form.Control
+                type='number'
+                min='0'
+                onChange={onFormChange}
+                name='guestTeamScore'
+              ></Form.Control>
             </Col>
           </Row>
           <Row>
@@ -54,7 +81,11 @@ export function AddMatchModalComponent({ show, handleClose, teams, referees, onF
                 </Col>
                 <Col sm={9} className='mr-3'>
                   <Form.Group>
-                    <Form.Select name="refereeId" onChange={onFormChange} aria-label='Select Game Referee'>
+                    <Form.Select
+                      name='refereeId'
+                      onChange={onFormChange}
+                      aria-label='Select Game Referee'
+                    >
                       {referees.map((referee, i) => (
                         <option key={i} value={referee.id}>
                           {referee.name}
