@@ -6,6 +6,7 @@ export function AddMatchModalComponent({
   handleClose,
   teams,
   referees,
+  form,
   onFormChange,
   submitHandler,
 }: ModalProps) {
@@ -24,7 +25,9 @@ export function AddMatchModalComponent({
                   name='homeTeamId'
                   onChange={onFormChange}
                   aria-label='Select Home Team'
+                  value={form.homeTeamId}
                 >
+                  <option disabled key={-1} value={-1}>Select Home Team</option>
                   {teams.map((team, i) => (
                     <option key={i} value={team.id}>
                       {team.name}
@@ -41,7 +44,9 @@ export function AddMatchModalComponent({
                   name='guestTeamId'
                   onChange={onFormChange}
                   aria-label='Select Guest Team'
+                  value={form.guestTeamId}
                 >
+                  <option disabled key={-1} value={-1}>Select Guest Team</option>
                   {teams.map((team, i) => (
                     <option key={i} value={team.id}>
                       {team.name}
@@ -59,6 +64,7 @@ export function AddMatchModalComponent({
                 min='0'
                 onChange={onFormChange}
                 name='homeTeamScore'
+                value={form.homeTeamScore}
               ></Form.Control>
             </Col>
             <Col sm={2} align='center' justify='center'>
@@ -70,6 +76,7 @@ export function AddMatchModalComponent({
                 min='0'
                 onChange={onFormChange}
                 name='guestTeamScore'
+                value={form.guestTeamScore}
               ></Form.Control>
             </Col>
           </Row>
@@ -85,9 +92,11 @@ export function AddMatchModalComponent({
                       name='refereeId'
                       onChange={onFormChange}
                       aria-label='Select Game Referee'
+                      value={form.refereeId}
                     >
+                        <option disabled key={-1} value={-1}>Select Referee</option>
                       {referees.map((referee, i) => (
-                        <option key={i} value={referee.id}>
+                        <option key={referee.id} value={referee.id}>
                           {referee.name}
                         </option>
                       ))}
