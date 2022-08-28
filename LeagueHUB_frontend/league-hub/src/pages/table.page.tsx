@@ -5,6 +5,11 @@ import { VerticalNavbarContainer } from '../containers/vertical-navbar.container
 import { useEffect, useState } from 'react'
 
 export function TablePage() {
+  const [updated, setUpdated] = useState(false)
+  const update = () => {
+    setUpdated(!updated)
+  }
+
   return (
     <Container>
       <Row>
@@ -14,13 +19,13 @@ export function TablePage() {
         <Col lg={10}>
           <Row>
             <Col>
-              <TableContainer></TableContainer>
+              <TableContainer updated={updated}></TableContainer>
             </Col>
           </Row>
           <Row>
             <Col lg={10}></Col>
             <Col sm={2}>
-              <AddMatchModalContainer></AddMatchModalContainer>
+              <AddMatchModalContainer update={update}></AddMatchModalContainer>
             </Col>
           </Row>
         </Col>

@@ -1,9 +1,9 @@
-import { useMemo } from 'react'
+import { useEffect } from 'react'
 import { Table } from 'react-bootstrap'
 import { TableProps } from '../interfaces/props/table.props'
 
 export function TableComponent({ teams }: TableProps) {
-return (
+  return (
     <Table striped bordered hover variant='dark' className='flex-column'>
       <thead>
         <tr>

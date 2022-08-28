@@ -4,11 +4,12 @@ import { AddMatchModalComponent } from '../../components/modals/add-match.modal.
 import { AddMatchFormModel } from '../../interfaces/models/add-match-form.model'
 import { Referee } from '../../interfaces/models/referee.model'
 import { Team } from '../../interfaces/models/team.model'
+import { RenderActionProps } from '../../interfaces/props/render-action.props'
 import { GameService } from '../../services/game.service'
 import { RefereeService } from '../../services/referee.service'
 import { TeamService } from '../../services/team.service'
 
-export function AddMatchModalContainer() {
+export function AddMatchModalContainer({ update }: RenderActionProps) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => {
@@ -21,22 +22,20 @@ export function AddMatchModalContainer() {
   const [teamData, setTeamData] = useState([] as Team[])
   async function fetchTeamData() {
     try {
-      // setLoading(true);
       const teams = await TeamService.fetchTeamData()
       setTeamData(teams.data)
     } finally {
-      // setLoading(false);
+      console.log
     }
   }
 
   const [refereeData, setRefereeData] = useState([] as Referee[])
   async function fetchRefereeData() {
     try {
-      // setLoading(true);
       const referees = await RefereeService.fetchRefereeData()
       setRefereeData(referees.data)
     } finally {
-      // setLoading(false);
+      console.log
     }
   }
 
@@ -54,16 +53,15 @@ export function AddMatchModalContainer() {
   const submitHandler: FormEventHandler = (event) => {
     event.preventDefault()
     event.persist()
-    addMatch();
-    handleClose();
+    addMatch()
+    handleClose()
   }
 
   async function addMatch() {
     try {
-      // setLoading(true);
       await GameService.addMatch(matchForm)
     } finally {
-      // setLoading(false);
+      update()
     }
   }
 
