@@ -44,14 +44,16 @@ export function AddMatchModalContainer({ update }: RenderActionProps) {
     fetchRefereeData()
   }, [])
 
-  const [matchForm, setMatchForm] = useState({
+  const matchFormInitState: AddMatchFormModel = {
     homeTeamId: -1,
   guestTeamId: -1,
   homeTeamScore: 0,
   guestTeamScore: 0,
   refereeId: -1,
-  gameDate: new Date(),
-  } as AddMatchFormModel)
+  gameDate: new Date()
+  }
+
+  const [matchForm, setMatchForm] = useState(matchFormInitState)
   const onFormChange = (e: { target: { name: any; value: any } }) => {
     const name = e.target.name
     const value = e.target.value
@@ -69,6 +71,7 @@ export function AddMatchModalContainer({ update }: RenderActionProps) {
       await GameService.addMatch(matchForm)
     } finally {
       update()
+      setMatchForm(matchFormInitState)
     }
   }
 
