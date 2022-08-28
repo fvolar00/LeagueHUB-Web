@@ -21,23 +21,24 @@ namespace LeagueHUB_backend.Services
             _mapper = mapper;
         }
 
-        public void CreateGame(int homeid, int guestid, int refereeid, int homescore, int guestscore)
-        {
-            Team home = _teamService.GetTeam(homeid);
-            Team guest = _teamService.GetTeam(guestid);          
-            Referee referee = _refereeService.GetReferee(refereeid);
+        public void CreateGame(MatchDto match)
+        { 
+            Team home = _teamService.GetTeam(match.homeTeamId);
+            Team guest = _teamService.GetTeam(match.guestTeamId);          
+            Referee referee = _refereeService.GetReferee(match.refereeId);
             Game game = new Game();
             game.Home = home;
             game.Guest = guest;
             game.Referee = referee;
-            game.HomeScore = homescore;
-            game.GuestScore = guestscore;
-            if(homescore > guestscore)
+            game.HomeScore = match.homeTeamScore;
+            game.GuestScore = match.guestTeamScore;
+            game.date = match.gameDate;
+            if(match.homeTeamScore > match.guestTeamScore)
             {
                 home.Won();
                 guest.Lost();
             }
-            else if (homescore == guestscore)
+            else if (match.homeTeamScore == match.guestTeamScore)
             {
                 home.Tied();
                 guest.Tied();
@@ -47,10 +48,10 @@ namespace LeagueHUB_backend.Services
                 home.Lost();
                 guest.Won();
             }
-            home.GoalsScored += homescore;
-            guest.GoalsScored += guestscore;
-            home.GoalsConceded += guestscore;
-            guest.GoalsConceded += homescore;
+            home.GoalsScored += match.homeTeamScore;
+            guest.GoalsScored += match.guestTeamScore;
+            home.GoalsConceded += match.guestTeamScore;
+            guest.GoalsConceded += match.homeTeamScore;
             _teamService.UpdateTeam(home);
             _teamService.UpdateTeam(guest);
             _gameRepository.CreateGame(game);

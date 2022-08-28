@@ -6,6 +6,6 @@ namespace LeagueHUB_backend.Interfaces.Services
     public interface IGameService
     {
         public List<GamesDto> GetGames();
-        public void CreateGame(int homeid, int guestid, int refereeid, int homescore, int guestscore);
+        public void CreateGame(MatchDto match);
     }
 }

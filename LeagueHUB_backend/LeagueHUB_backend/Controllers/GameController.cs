@@ -1,4 +1,5 @@
-﻿using LeagueHUB_backend.Interfaces.Services;
+﻿using LeagueHUB_backend.Dto;
+using LeagueHUB_backend.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeagueHUB_backend.Controllers
@@ -20,9 +21,10 @@ namespace LeagueHUB_backend.Controllers
         }
 
         [HttpPost, Route("api/[controller]/create")]
-        public IActionResult CreateGame(int homeid, int guestid, int refereeid, int homescore, int guestscore)
+        public IActionResult CreateGame(MatchDto match)
         {
-            _gameService.CreateGame(homeid, guestid, refereeid, homescore, guestscore);
+            Console.WriteLine(match.gameDate);
+            _gameService.CreateGame(match);
             return Ok();
         }
     }
