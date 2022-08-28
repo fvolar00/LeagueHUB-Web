@@ -23,7 +23,6 @@ namespace LeagueHUB_backend.Controllers
         [HttpPost, Route("api/[controller]/create")]
         public IActionResult CreateGame(MatchDto match)
         {
-            Console.WriteLine(match.gameDate);
             _gameService.CreateGame(match);
             return Ok();
         }

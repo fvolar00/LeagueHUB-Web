@@ -1,5 +1,6 @@
 ﻿using LeagueHUB_backend.Interfaces.Repos;
 using LeagueHUB_backend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LeagueHUB_backend.Repository
 {
@@ -19,7 +20,7 @@ namespace LeagueHUB_backend.Repository
 
         public List<Game> GetGames()
         {
-            List<Game> games = _context.Games.ToList();
+            List<Game> games = _context.Games.Include(game => game.Home).Include(game => game.Guest).Include(game => game.Referee).ToList();
             return games;
         }
     }
