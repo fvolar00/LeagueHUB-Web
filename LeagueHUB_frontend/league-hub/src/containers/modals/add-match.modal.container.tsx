@@ -4,12 +4,12 @@ import { AddMatchModalComponent } from '../../components/modals/add-match.modal.
 import { AddMatchFormModel } from '../../interfaces/models/form/add-match.form.model'
 import { Referee } from '../../interfaces/models/referee.model'
 import { Team } from '../../interfaces/models/team.model'
-import { RenderActionProps } from '../../interfaces/props/render/render-action.props'
+import { RenderProps } from '../../interfaces/props/render/render.props'
 import { GameService } from '../../services/game.service'
 import { RefereeService } from '../../services/referee.service'
 import { TeamService } from '../../services/team.service'
 
-export function AddMatchModalContainer({ update }: RenderActionProps) {
+export function AddMatchModalContainer({ updated, update }: RenderProps) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => {
@@ -42,7 +42,7 @@ export function AddMatchModalContainer({ update }: RenderActionProps) {
   useEffect(() => {
     fetchTeamData()
     fetchRefereeData()
-  }, [])
+  }, [updated])
 
   const matchFormInitState: AddMatchFormModel = {
     homeTeamId: -1,

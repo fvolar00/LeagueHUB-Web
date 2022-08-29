@@ -15,7 +15,7 @@ export function TablePage() {
       <Row>
         <Col sm={2} align='center'>
           <Row className='mb-2'>
-            <AddMatchModalContainer update={update}></AddMatchModalContainer>
+            <AddMatchModalContainer updated={updated} update={update}></AddMatchModalContainer>
           </Row>
           <Row className='mt-2'>
             <ManageDropdownContainer update={update}></ManageDropdownContainer>
