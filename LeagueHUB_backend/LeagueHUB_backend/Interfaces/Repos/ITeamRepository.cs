@@ -12,6 +12,7 @@ namespace LeagueHUB_backend.Interfaces.Repos
         public bool Save();
         public void CreateTeam(Team team);
         public void UpdateTeam(Team team);
+        public void DeleteTeam(int id);
 
     }
 }

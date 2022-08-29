@@ -7,5 +7,6 @@ namespace LeagueHUB_backend.Interfaces.Services
     {
         public List<GamesDto> GetGames();
         public void CreateGame(MatchDto match);
+        void DeleteTeamGames(int id);
     }
 }

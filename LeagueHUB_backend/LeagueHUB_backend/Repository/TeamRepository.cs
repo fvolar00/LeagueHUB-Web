@@ -25,10 +25,12 @@ namespace LeagueHUB_backend.Repository
 
         }
 
-        //public bool AddTeam(string teamName, string coachName)
-        //{
-        //    if (teamName != null && coachName != null)˛{ }
-        //}
+        public void DeleteTeam(int id)
+        {
+            Team team = _context.Teams.Find(id);
+            _context.Teams.Remove(team);
+            _context.SaveChanges();
+        }
 
         public int GetGoalDifference(int id)
         {

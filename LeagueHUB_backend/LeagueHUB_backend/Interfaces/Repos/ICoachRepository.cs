@@ -10,5 +10,6 @@ namespace LeagueHUB_backend.Interfaces.Repos
         public void CreateCoach(Coach coach);
         public void UpdateCoach(Coach coach);
         public void DeleteCoach(Coach coach);
+        void RemoveTeam(int teamId);
     }
 }

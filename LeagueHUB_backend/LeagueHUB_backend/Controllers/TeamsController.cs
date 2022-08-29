@@ -21,10 +21,14 @@ namespace LeagueHUB_backend.Controllers
     public class TeamsController : Controller
     {
         private readonly ITeamService _teamService;
+        private readonly IGameService _gameService;
+        private readonly ICoachService _coachService;
 
-        public TeamsController(ITeamService teamService)
+        public TeamsController(ITeamService teamService, IGameService gameService, ICoachService coachService)
         {
             _teamService = teamService;
+            _gameService = gameService;
+            _coachService = coachService;
         }     
 
         [HttpGet, Route("api/[controller]")]
@@ -38,6 +42,15 @@ namespace LeagueHUB_backend.Controllers
         public IActionResult CreateTeam(string name)
         {
             _teamService.CreateTeam(name);
+            return Ok();
+        }
+
+        [HttpDelete, Route("api/[controller]/{id}")]
+        public IActionResult DeleteTeam(int id)
+        {
+            _coachService.RemoveTeam(id);
+            _gameService.DeleteTeamGames(id);
+            _teamService.DeleteTeam(id);
             return Ok();
         }
 

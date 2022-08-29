@@ -24,6 +24,11 @@ namespace LeagueHUB_backend.Services
             _teamRepository.CreateTeam(team);
         }
 
+        public void DeleteTeam(int id)
+        {
+            _teamRepository.DeleteTeam(id);
+        }
+
         public Team GetTeam(int id)
         {
             Team team = _teamRepository.GetTeam(id);

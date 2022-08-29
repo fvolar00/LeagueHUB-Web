@@ -57,6 +57,11 @@ namespace LeagueHUB_backend.Services
             _gameRepository.CreateGame(game);
         }
 
+        public void DeleteTeamGames(int id)
+        {
+            _gameRepository.DeleteTeamGames(id);
+        }
+
         public List<GamesDto> GetGames()
         {
             List<Game> games = _gameRepository.GetGames();

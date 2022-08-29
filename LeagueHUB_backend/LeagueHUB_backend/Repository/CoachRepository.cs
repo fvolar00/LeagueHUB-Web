@@ -39,6 +39,16 @@ namespace LeagueHUB_backend.Repository
             return _context.Coaches.OrderBy(p => p.Name).ToList();
         }
 
+        public void RemoveTeam(int teamId)
+        {
+            List<Coach> coaches = _context.Coaches.Where(coach => coach.Team.Id == teamId).ToList();
+            foreach(var coach in coaches)
+            {
+                coach.Team = null;
+            }
+            _context.SaveChanges();
+        }
+
         public void UpdateCoach(Coach coach)
         {
             _context.Update(coach);

@@ -10,5 +10,6 @@ namespace LeagueHUB_backend.Interfaces.Services
         public void UpdateCoach(int id, TacticType tactic);
         public void DeleteCoach(int id);
         public void Assign(int id, int teamid);
+        void RemoveTeam(int id);
     }
 }

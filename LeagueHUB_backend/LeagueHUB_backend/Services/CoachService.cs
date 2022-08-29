@@ -43,6 +43,11 @@ namespace LeagueHUB_backend.Services
             return coaches;
         }
 
+        public void RemoveTeam(int teamId)
+        {
+            _coachRepository.RemoveTeam(teamId);
+        }
+
         public void UpdateCoach(int id, TacticType tactic)
         {
             Coach coach = _coachRepository.GetCoach(id);

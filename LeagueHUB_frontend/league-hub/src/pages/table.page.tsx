@@ -22,7 +22,7 @@ export function TablePage() {
           </Row>
         </Col>
         <Col sm={10}>
-          <TableContainer updated={updated}></TableContainer>
+          <TableContainer updated={updated} update={update}></TableContainer>
         </Col>
       </Row>
     </Container>

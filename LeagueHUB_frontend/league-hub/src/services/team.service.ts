@@ -8,4 +8,8 @@ export const TeamService = {
   fetchTeamData: async (): Promise<AxiosResponse<Team[]>> => {
     return axios.get(`${BASE_TEAM_URL}`)
   },
+
+  deleteTeam: async (teamId: number): Promise<AxiosResponse<void>> => {
+    return axios.delete(`${BASE_TEAM_URL}/${teamId}`)
+  }
 }

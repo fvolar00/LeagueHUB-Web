@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { Table } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap'
 import { TableProps } from '../interfaces/props/table.props'
 
-export function TableComponent({ teams }: TableProps) {
+export function TableComponent({ teams, deleteTeam }: TableProps) {
   return (
     <Table striped bordered hover variant='dark' className='flex-column'>
       <thead>
@@ -17,6 +17,7 @@ export function TableComponent({ teams }: TableProps) {
           <th>Goals Scored</th>
           <th>Goals Conceded</th>
           <th>Goal Difference</th>
+          <th>#</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +33,7 @@ export function TableComponent({ teams }: TableProps) {
             <td>{team.goalsScored}</td>
             <td>{team.goalsConceded}</td>
             <td>{team.goalsScored - team.goalsConceded}</td>
+            <td><Button onClick={deleteTeam} value={team.id}>Delete</Button></td>
           </tr>
         ))}
       </tbody>

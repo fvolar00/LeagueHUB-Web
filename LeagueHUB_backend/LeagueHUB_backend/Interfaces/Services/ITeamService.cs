@@ -9,5 +9,6 @@ namespace LeagueHUB_backend.Interfaces.Services
         public Team GetTeam(int id);
         public void CreateTeam(string name);
         public void UpdateTeam(Team team);
+        void DeleteTeam(int id);
     }
 }

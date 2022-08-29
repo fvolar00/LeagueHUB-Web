@@ -18,6 +18,16 @@ namespace LeagueHUB_backend.Repository
             _context.SaveChanges();
         }
 
+        public void DeleteTeamGames(int id)
+        {
+            var games = _context.Games.Where(x => x.Home.Id == id || x.Guest.Id == id).ToList();
+            foreach (var game in games)
+            {
+                _context.Remove(game);
+            }
+            _context.SaveChanges();
+        }
+
         public List<Game> GetGames()
         {
             List<Game> games = _context.Games.Include(game => game.Home).Include(game => game.Guest).Include(game => game.Referee).ToList();

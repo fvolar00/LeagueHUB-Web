@@ -6,5 +6,6 @@ namespace LeagueHUB_backend.Interfaces.Repos
     {
         public List<Game> GetGames();
         public void CreateGame(Game game);
+        public void DeleteTeamGames(int id);
     }
 }
