@@ -39,9 +39,9 @@ namespace LeagueHUB_backend.Controllers
         }
 
         [HttpPost, Route("api/[controller]/create")]
-        public IActionResult CreateTeam(string name)
+        public IActionResult CreateTeam(TeamCreationDto teamCreationDto)
         {
-            _teamService.CreateTeam(name);
+            _teamService.CreateTeam(teamCreationDto.Name);
             return Ok();
         }
 
