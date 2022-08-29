@@ -11,14 +11,14 @@ export function TablePage() {
   }
 
   return (
-    <Container fluid className="mt-4 mr-4 ml-4">
+    <Container fluid className='mt-4 mr-4 ml-4'>
       <Row>
-        <Col sm={2} align="center">
-          <Row className="mb-2">
+        <Col sm={2} align='center'>
+          <Row className='mb-2'>
             <AddMatchModalContainer update={update}></AddMatchModalContainer>
           </Row>
-          <Row className="mt-2">
-            <ManageDropdownContainer></ManageDropdownContainer>
+          <Row className='mt-2'>
+            <ManageDropdownContainer update={update}></ManageDropdownContainer>
           </Row>
         </Col>
         <Col sm={10}>

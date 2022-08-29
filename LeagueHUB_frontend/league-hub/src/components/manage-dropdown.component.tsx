@@ -1,11 +1,11 @@
-import { Dropdown, DropdownButton } from 'react-bootstrap'
+import { DropdownButton } from 'react-bootstrap'
+import { AddTeamModalContainer } from '../containers/modals/add-team.modal.container'
+import { ManagementProps } from '../interfaces/props/management.props'
 
-export function ManageDropdownComponent() {
+export function ManageDropdownComponent({ update }: ManagementProps) {
   return (
-    <DropdownButton id="dropdown-basic-button" title="Management">
-    <Dropdown.Item href="/">Teams</Dropdown.Item>
-    <Dropdown.Item href="/">Coaches</Dropdown.Item>
-    <Dropdown.Item href="/">Referees</Dropdown.Item>
-  </DropdownButton>
+    <DropdownButton id='dropdown-basic-button' title='Management'>
+      <AddTeamModalContainer update={update}></AddTeamModalContainer>
+    </DropdownButton>
   )
 }

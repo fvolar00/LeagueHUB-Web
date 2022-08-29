@@ -1,5 +1,5 @@
 import { Button, Form, Modal, Row, Col } from 'react-bootstrap'
-import { ModalProps } from '../../interfaces/props/modal.props'
+import { AddMatchModalProps } from '../../interfaces/props/modals/add-match.modal.props'
 
 export function AddMatchModalComponent({
   show,
@@ -9,7 +9,7 @@ export function AddMatchModalComponent({
   form,
   onFormChange,
   submitHandler,
-}: ModalProps) {
+}: AddMatchModalProps) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>

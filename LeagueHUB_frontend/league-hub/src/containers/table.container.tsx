@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
 import { TableComponent } from '../components/table.component'
 import { Team } from '../interfaces/models/team.model'
-import { RenderProps } from '../interfaces/props/render.props'
+import { RenderProps } from '../interfaces/props/render/render.props'
 import { TeamService } from '../services/team.service'
 
 export function TableContainer({ updated, update }: RenderProps) {
@@ -26,7 +26,8 @@ export function TableContainer({ updated, update }: RenderProps) {
   async function deleteTeam(e: React.MouseEvent) {
     try {
       setLoading(true)
-      const teams = await TeamService.deleteTeam(Number(e.currentTarget.getAttribute('value')))
+      await TeamService.deleteTeam(Number(e.currentTarget.getAttribute('value')))
+      // console.log(Number(e.currentTarget.getAttribute('value')))
     } finally {
       setLoading(false)
       update()

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Button, Table } from 'react-bootstrap'
 import { TableProps } from '../interfaces/props/table.props'
 
@@ -33,7 +32,11 @@ export function TableComponent({ teams, deleteTeam }: TableProps) {
             <td>{team.goalsScored}</td>
             <td>{team.goalsConceded}</td>
             <td>{team.goalsScored - team.goalsConceded}</td>
-            <td><Button onClick={deleteTeam} value={team.id}>Delete</Button></td>
+            <td>
+              <Button onClick={deleteTeam} value={team.id}>
+                Delete
+              </Button>
+            </td>
           </tr>
         ))}
       </tbody>

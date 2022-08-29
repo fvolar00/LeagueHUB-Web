@@ -2,6 +2,6 @@ import React from 'react'
 import { Team } from '../models/team.model'
 
 export interface TableProps {
-  teams: Team[],
+  teams: Team[]
   deleteTeam: (e: React.MouseEvent) => {}
 }
