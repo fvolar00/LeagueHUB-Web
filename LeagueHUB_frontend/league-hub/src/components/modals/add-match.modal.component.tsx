@@ -27,7 +27,9 @@ export function AddMatchModalComponent({
                   aria-label='Select Home Team'
                   value={form.homeTeamId}
                 >
-                  <option disabled key={-1} value={-1}>Select Home Team</option>
+                  <option disabled key={-1} value={-1}>
+                    Select Home Team
+                  </option>
                   {teams.map((team, i) => (
                     <option key={i} value={team.id}>
                       {team.name}
@@ -46,7 +48,9 @@ export function AddMatchModalComponent({
                   aria-label='Select Guest Team'
                   value={form.guestTeamId}
                 >
-                  <option disabled key={-1} value={-1}>Select Guest Team</option>
+                  <option disabled key={-1} value={-1}>
+                    Select Guest Team
+                  </option>
                   {teams.map((team, i) => (
                     <option key={i} value={team.id}>
                       {team.name}
@@ -94,7 +98,9 @@ export function AddMatchModalComponent({
                       aria-label='Select Game Referee'
                       value={form.refereeId}
                     >
-                        <option disabled key={-1} value={-1}>Select Referee</option>
+                      <option disabled key={-1} value={-1}>
+                        Select Referee
+                      </option>
                       {referees.map((referee, i) => (
                         <option key={referee.id} value={referee.id}>
                           {referee.name}

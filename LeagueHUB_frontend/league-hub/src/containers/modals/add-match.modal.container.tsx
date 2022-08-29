@@ -46,11 +46,11 @@ export function AddMatchModalContainer({ update }: RenderActionProps) {
 
   const matchFormInitState: AddMatchFormModel = {
     homeTeamId: -1,
-  guestTeamId: -1,
-  homeTeamScore: 0,
-  guestTeamScore: 0,
-  refereeId: -1,
-  gameDate: new Date()
+    guestTeamId: -1,
+    homeTeamScore: 0,
+    guestTeamScore: 0,
+    refereeId: -1,
+    gameDate: new Date(),
   }
 
   const [matchForm, setMatchForm] = useState(matchFormInitState)

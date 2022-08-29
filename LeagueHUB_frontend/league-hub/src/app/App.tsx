@@ -1,8 +1,8 @@
 import './App.css'
-import { LandingPage } from '../pages/landing.page'
+import { TablePage } from '../pages/table.page'
 
 function App() {
-  return <LandingPage></LandingPage>
+  return <TablePage></TablePage>
 }
 
 export default App

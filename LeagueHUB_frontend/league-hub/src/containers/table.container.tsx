@@ -24,9 +24,9 @@ export function TableContainer({ updated }: RenderProps) {
   }, [updated])
 
   return (
-  <div>
-    <TableComponent teams={teamData}></TableComponent>
-    {loading && <Spinner animation='border' variant='secondary' />}  
+    <div>
+      <TableComponent teams={teamData}></TableComponent>
+      {loading && <Spinner animation='border' variant='secondary' />}
     </div>
-    );
+  )
 }

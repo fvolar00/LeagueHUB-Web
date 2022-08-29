@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { AddMatchModalContainer } from '../containers/modals/add-match.modal.container'
 import { TableContainer } from '../containers/table.container'
-import { VerticalNavbarContainer } from '../containers/vertical-navbar.container'
+import { ManageDropdownContainer } from '../containers/manage-dropdown.container'
 import { useState } from 'react'
 
 export function TablePage() {
@@ -11,23 +11,18 @@ export function TablePage() {
   }
 
   return (
-    <Container>
+    <Container fluid className="mt-4 mr-4 ml-4">
       <Row>
-        <Col xl={2}>
-          <VerticalNavbarContainer></VerticalNavbarContainer>
+        <Col sm={2} align="center">
+          <Row className="mb-2">
+            <AddMatchModalContainer update={update}></AddMatchModalContainer>
+          </Row>
+          <Row className="mt-2">
+            <ManageDropdownContainer></ManageDropdownContainer>
+          </Row>
         </Col>
-        <Col lg={10}>
-          <Row>
-            <Col>
-              <TableContainer updated={updated}></TableContainer>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={10}></Col>
-            <Col sm={2}>
-              <AddMatchModalContainer update={update}></AddMatchModalContainer>
-            </Col>
-          </Row>
+        <Col sm={10}>
+          <TableContainer updated={updated}></TableContainer>
         </Col>
       </Row>
     </Container>
