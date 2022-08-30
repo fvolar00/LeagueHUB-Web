@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="LeagueHUB_backend.Models.Competitor">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQCAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\Competitor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Team" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LeagueHUB_backend.Models.Coach">
+    <Position X="8" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Competitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeagueHUB_backend.Models.Player">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Competitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeagueHUB_backend.Models.Team">
+    <Position X="11" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAQAAggAAAAgAAAAQAAgAwAABgAAAAAQAAAgA=</HashCode>
+      <FileName>Models\Team.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Coach" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Players" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LeagueHUB_backend.Models.Referee">
+    <Position X="7.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Referee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Games" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LeagueHUB_backend.Models.Game">
+    <Position X="11.75" Y="5.25" Width="1.5" />
+    <AssociationLine Name="Guest" Type="LeagueHUB_backend.Models.Team" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.812" Y="5.312" />
+        <Point X="11.812" Y="4.864" />
+        <Point X="11.812" Y="4.864" />
+        <Point X="11.812" Y="4.478" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Home" Type="LeagueHUB_backend.Models.Team" FixedToPoint="true">
+      <Path>
+        <Point X="12.438" Y="5.25" />
+        <Point X="12.438" Y="4.478" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAEACQQAAAAg=</HashCode>
+      <FileName>Models\Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Guest" />
+      <Property Name="Home" />
+      <Property Name="Referee" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LeagueHUB_backend.Repository.CoachRepository" Collapsed="true">
+    <Position X="14.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAgAAAAABAAAAAACAAMQAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\CoachRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="LeagueHUB_backend.Interfaces.Repos.ICoachRepository" Collapsed="true">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAgAAAAAAAAAAAACAAMQAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Repos\ICoachRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
